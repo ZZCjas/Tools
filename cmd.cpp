@@ -15,7 +15,7 @@ int main()
 		{
 			return 0;	
 		} 
-		system("@echo off");
+		//system("@echo off");
 		if(system(s.c_str())==0)
 		{
 			cout<<"\n指令执行成功!\n\n";
