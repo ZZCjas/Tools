@@ -45,7 +45,7 @@ int main(int argc,char* argv[])
 		eend=clock();
 		cout<<"Succeed!\nUse ";
 		cout.precision(3);
-		cout<<fixed<<(double)(eend-start)/CLOCKS_PER_SEC<<"s to download\n";
+		cout<<fixed<<(double)(eend-start)/1000<<"s to download\n";
 	}
 	else
 	{
