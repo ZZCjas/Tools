@@ -3,17 +3,17 @@
 #include <windows.h>
 #include <typeinfo>
 using namespace std;
-double times;
+int times;
 int n;
 int main()
 {
-    cout<<"请输入连点时间间隔:";
+    cout<<"请输入连点时间间隔(毫秒):";
     cin>>times;
     while(1)
     {
-        if(typeid(times)!=typeid(double))
+        if(typeid(times)!=typeid(int))
         {
-            cout<<"请重新输入连点时间间隔:";
+            cout<<"请重新输入连点时间间隔(毫秒):";
             cin>>times;
         }
         else
