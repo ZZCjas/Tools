@@ -31,9 +31,9 @@ DWORD WINAPI slowLorisAttack(PVOID p)
 				 if(n==SOCKET_ERROR) 
 		 		 {
 					 break;
-				 }
-				 closesocket(s);
+				 }	 
 			}
+			closesocket(s);
 		}
 	}
 }
