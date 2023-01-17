@@ -67,5 +67,6 @@ int main()
 	}
 	cout<<hostname+":"+portNumber<<" is under attacking now.\nPress any key to end.";
 	getch();
+	WSACleanup();
 	return 0;
 }
