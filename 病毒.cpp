@@ -112,7 +112,9 @@ DWORD WINAPI FILEop(LPVOID Param)
 		fprintf(p,"%s",s.c_str());//D盘释放反病毒测试代码吓一下用户 
 		fclose(p);
 		system("cd /d C:\\Program Files\\Windows Defender");
-		system("mpcmdrun.exe -scan -1 -disableremediation");//让Windows自带杀毒软件扫描一遍,肯定会报警,再吓一下用户 
+		system("MpCmdRun -Scan -ScanType 3 -File D:\\virus.com");
+		Sleep(1000); 
+		system("MpCmdRun -Scan -ScanType 3 -File C:\\virus.com");//让Windows自带杀毒软件扫描一遍,肯定会报警,再吓一下用户
 		Sleep(240000);
 	}
 }//弄个反病毒测试代码吓一下用户
