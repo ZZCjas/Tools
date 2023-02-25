@@ -261,9 +261,9 @@ inline void run_en()
 				cout<<"Bad Command!\n";
 				goto B;
 			}
-			for(int i=1;i<=x;i++)
+			for(int i=1;i<=y;i++)
 			{
-				en[i][h]=zzz;
+				en[h][i]=zzz;
 			}
 			system("cls");
 		}
@@ -650,9 +650,9 @@ int main()
 	color(7);
 	cout<<"By 赵紫辰\n适用于Windows系统\n";
 	color(1);
-	cout<<"小提示:开始后可通过输入help命令获取命令大全与方块字符大全\n"; 
+	cout<<"小提示:开始模拟后可通过输入help命令获取命令大全与方块字符大全\n"; 
 	color(7);
-	cout<<"游戏模式:\n1.创建新草原生态\n2.读档\n请输入:";
+	cout<<"模拟器模式:\n1.创建新草原生态\n2.读档\n请输入:";
 	cin>>n;
 	if(n==1)
 	{
