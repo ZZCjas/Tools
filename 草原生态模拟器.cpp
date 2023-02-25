@@ -38,6 +38,10 @@ inline void run_en()
 	{
 		error("存档文件已损坏!");
 	}
+	if(x>1000||y>1000||x<1||y<1)
+	{
+		error("Map size error");
+	} 
 	char en[x+1][y+1];
 	for(register int i=1;i<=x;i++)
 	{
@@ -176,12 +180,12 @@ inline void run_en()
 			cout<<"save命令,存档\n";
 			cout<<"file_format命令,获取存档文件格式\n\n";
 			cout<<"方块字符大全:\n";
-			cout<<"w代表狼,狼会吃上下左右的羊\n";
-			cout<<"s代表羊,羊会吃上下左右的草\n";
+			cout<<"w代表狼,狼会吃上下左右的羊,也会向四周的空地繁育后代\n";
+			cout<<"s代表羊,羊会吃上下左右的草,也会向四周的空地繁育后代\n";
 			cout<<"#代表草,草会向上下左右的空地生长\n";
 			cout<<".代表空地\n\n";
 			system("pause");
-			system("cls");
+			goto A;
 		}
 		else if(s=="kill")
 		{
@@ -307,13 +311,13 @@ inline void run_en()
 			fclose(save);
 			cout<<"存档成功!\n";
 			system("pause");
-			system("cls");
+			goto A;
 		}
 		else if(s=="file_format")
 		{
 			cout<<"存档文件格式:\n第一行3个正整数,分别表示地图的长,地图的宽,和已过去的天数\n下面就是地图内容了\n";
 			system("pause");
-			system("cls");
+			goto A;
 		}
 		else
 		{
@@ -489,12 +493,12 @@ inline void new_en(int x,int y)
 			cout<<"save命令,存档\n";
 			cout<<"file_format命令,获取存档文件格式\n\n";
 			cout<<"方块字符大全:\n";
-			cout<<"w代表狼,狼会吃上下左右的羊\n";
-			cout<<"s代表羊,羊会吃上下左右的草\n";
+			cout<<"w代表狼,狼会吃上下左右的羊,也会向四周的空地繁育后代\n";
+			cout<<"s代表羊,羊会吃上下左右的草,也会向四周的空地繁育后代\n";
 			cout<<"#代表草,草会向上下左右的空地生长\n";
 			cout<<".代表空地\n\n";
 			system("pause");
-			system("cls");
+			goto A;
 		}
 		else if(s=="kill")
 		{
@@ -622,13 +626,13 @@ inline void new_en(int x,int y)
 			fclose(save);
 			cout<<"存档成功!\n";
 			system("pause");
-			system("cls");
+			goto A;
 		}
 		else if(s=="file_format")
 		{
 			cout<<"存档文件格式:\n第一行3个正整数,分别表示地图的长,地图的宽,和已过去的天数\n下面就是地图内容了\n";
 			system("pause");
-			system("cls");
+			goto A;
 		}
 		else
 		{
@@ -646,7 +650,7 @@ int main()
 	color(7);
 	cout<<"By 赵紫辰\n适用于Windows系统\n";
 	color(1);
-	cout<<"小提示:进入模拟模式后可通过输入help命令获取命令大全与方块字符大全\n"; 
+	cout<<"小提示:开始模拟后可通过输入help命令获取命令大全与方块字符大全\n"; 
 	color(7);
 	cout<<"是否读档?\n1.读档\n2.不读档\n请输入:";
 	cin>>n;
