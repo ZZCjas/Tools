@@ -21,19 +21,34 @@ void color(int x)
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),7);
 	}
 }
+void error(string s)
+{
+	color(4);
+	cerr<<s<<endl;
+	color(7);
+	throw s.c_str();
+	exit(-1);
+}
 inline void run_en()
 {
-	int x,y;
+	int x=0,y=0;
+	long long d=0; 
 	FILE *load=fopen(store.c_str(),"r");
-	fscanf(load,"%d%d",&x,&y);
+	if(fscanf(load,"%d%d%lld",&x,&y,&d)!=3)
+	{
+		error("存档文件已损坏!");
+	}
 	char en[x+1][y+1];
 	for(register int i=1;i<=x;i++)
 	{
-		fscanf(load,"%s",en[i]);
+		if(fscanf(load,"%s",en[i])!=1)
+		{
+			error("存档文件已损坏!");
+		}
 	}
 	system("cls");
 	system("title 模拟中");
-	for(long long d=1;;d++)
+	for(;;d++)
 	{
 		if(d!=1)
 		{
@@ -142,7 +157,7 @@ inline void run_en()
 			}
 			putchar('\n');
 		}
-		A:cout<<"请输入指令:\n";
+		A:cout<<"请输入指令:";
 		string s;
 		cin>>s;
 		if(s=="help")
@@ -153,12 +168,13 @@ inline void run_en()
 			cout<<"kill_square命令,参数x1,y1,x2,y2,指定要杀死的二维区间,杀死后变为空地\n";
 			cout<<"change命令,参数x,y和字符c,指定要改变的方块\n";
 			cout<<"change_line命令,参数x和字符c,指定要改变的横行\n";
-			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,指定要改变的二维区间\n";
+			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,定要改变的二维区间\n";
 			cout<<"next命令,进入下一天\n";
 			cout<<"exit命令,退出程序\n";
 			cout<<"help命令,获取命令大全和方块字符大全\n";
 			cout<<"Atom_Bomb命令,用核弹炸毁草原,将生命体统统杀死,只留下空地\n";
-			cout<<"save命令,存档\n\n";
+			cout<<"save命令,存档\n";
+			cout<<"file_format命令,获取存档文件格式\n\n";
 			cout<<"方块字符大全:\n";
 			cout<<"w代表狼,狼会吃上下左右的羊\n";
 			cout<<"s代表羊,羊会吃上下左右的草\n";
@@ -279,7 +295,7 @@ inline void run_en()
 		else if(s=="save")
 		{
 			FILE *save=fopen(store.c_str(),"w");
-			fprintf(save,"%d %d\n",x,y);
+			fprintf(save,"%d %d %lld\n",x,y,d);
 			for(int i=1;i<=x;i++)
 			{
 				for(int j=1;j<=y;j++)
@@ -290,6 +306,12 @@ inline void run_en()
 			}
 			fclose(save);
 			cout<<"存档成功!\n";
+			system("pause");
+			system("cls");
+		}
+		else if(s=="file_format")
+		{
+			cout<<"存档文件格式:\n第一行3个正整数,分别表示地图的长,地图的宽,和已过去的天数\n下面就是地图内容了\n";
 			system("pause");
 			system("cls");
 		}
@@ -448,7 +470,7 @@ inline void new_en(int x,int y)
 			}
 			putchar('\n');
 		}
-		A:cout<<"请输入指令:\n";
+		A:cout<<"请输入指令:";
 		string s;
 		cin>>s;
 		if(s=="help")
@@ -464,7 +486,8 @@ inline void new_en(int x,int y)
 			cout<<"exit命令,退出程序\n";
 			cout<<"help命令,获取命令大全和方块字符大全\n";
 			cout<<"Atom_Bomb命令,用核弹炸毁草原,将生命体统统杀死,只留下空地\n";
-			cout<<"save命令,存档\n\n";
+			cout<<"save命令,存档\n";
+			cout<<"file_format命令,获取存档文件格式\n\n";
 			cout<<"方块字符大全:\n";
 			cout<<"w代表狼,狼会吃上下左右的羊\n";
 			cout<<"s代表羊,羊会吃上下左右的草\n";
@@ -584,10 +607,10 @@ inline void new_en(int x,int y)
 		}
 		else if(s=="save")
 		{
-			cout<<"请输入保存路径:\n";
+			cout<<"请输入保存路径:";
 			cin>>path;
 			FILE *save=fopen(path.c_str(),"w");
-			fprintf(save,"%d %d\n",x,y);
+			fprintf(save,"%d %d %lld\n",x,y,d);
 			for(int i=1;i<=x;i++)
 			{
 				for(int j=1;j<=y;j++)
@@ -598,6 +621,12 @@ inline void new_en(int x,int y)
 			}
 			fclose(save);
 			cout<<"存档成功!\n";
+			system("pause");
+			system("cls");
+		}
+		else if(s=="file_format")
+		{
+			cout<<"存档文件格式:\n第一行3个正整数,分别表示地图的长,地图的宽,和已过去的天数\n下面就是地图内容了\n";
 			system("pause");
 			system("cls");
 		}
@@ -625,10 +654,9 @@ int main()
 	{
 		cout<<"请输入新地图的长和宽(推荐为25*25,最大1000*1000):\n";
 		cin>>x>>y;
-		if(x>1000||y>1000)
+		if(x>1000||y>1000||x<1||y<1)
 		{
-			cerr<<"Map size too large\n";
-			throw "Map size too large";
+			error("Map size error");
 		}
 		new_en(x,y);
 	}
@@ -639,13 +667,10 @@ int main()
 		FILE *tester=fopen(store.c_str(),"r");
 		if(tester==NULL)
 		{
-			color(4);
-			cerr<<"无效存档文件路径!\n";
-			color(7);
-			throw "No file";
+			error("无效存档文件路径!");
 		}
 		color(2);
-		cout<<"读档成功!正在加载...";
+		cout<<"读档中!正在加载...\n";
 		color(7);
 		Sleep(1000);
 		run_en();
