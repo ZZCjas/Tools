@@ -45,7 +45,7 @@ inline void run_en()
 	char en[x+1][y+1];
 	for(register int i=1;i<=x;i++)
 	{
-		if(fscanf(load,"%s",en[i])!=1)
+		if(fscanf(load,"%s",en[i]+1)!=1)
 		{
 			error("´æµµÎÄ¼şÒÑËğ»µ!");
 		}
