@@ -155,11 +155,7 @@ inline void run_en()
 		cout<<"第"<<d<<"天:\n"; 
 		for(int i=1;i<=x;i++)
 		{
-			for(int j=1;j<=y;j++)
-			{
-				putchar(en[i][j]);
-			}
-			putchar('\n');
+			puts(en[i]);
 		}
 		A:cout<<"请输入指令:";
 		string s;
@@ -302,11 +298,7 @@ inline void run_en()
 			fprintf(save,"%d %d %lld\n",x,y,d);
 			for(int i=1;i<=x;i++)
 			{
-				for(int j=1;j<=y;j++)
-				{
-					fprintf(save,"%c",en[i][j]);
-				}
-				fprintf(save,"\n");
+				fprintf(save,"%s\n",en[i]);
 			}
 			fclose(save);
 			cout<<"存档成功!\n";
@@ -468,11 +460,7 @@ inline void new_en(int x,int y)
 		cout<<"第"<<d<<"天:\n"; 
 		for(int i=1;i<=x;i++)
 		{
-			for(int j=1;j<=y;j++)
-			{
-				putchar(en[i][j]);
-			}
-			putchar('\n');
+			puts(en[i]);
 		}
 		A:cout<<"请输入指令:";
 		string s;
@@ -617,11 +605,7 @@ inline void new_en(int x,int y)
 			fprintf(save,"%d %d %lld\n",x,y,d);
 			for(int i=1;i<=x;i++)
 			{
-				for(int j=1;j<=y;j++)
-				{
-					fprintf(save,"%c",en[i][j]);
-				}
-				fprintf(save,"\n");
+				fprintf(save,"%s\n",en[i]);
 			}
 			fclose(save);
 			cout<<"存档成功!\n";
