@@ -138,7 +138,7 @@ inline void run_en()
 						}
 						if(en[i][j-1]=='.')
 						{
-							en[i-1][j]='#';
+							en[i][j-1]='#';
 						}
 						if(en[i+1][j]=='.')
 						{
@@ -168,10 +168,10 @@ inline void run_en()
 		{
 			cout<<"命令大全:\n";
 			cout<<"kill命令,参数x和y,指定要杀死的方块,杀死后变为空地\n";
-			cout<<"kill_line命令,参数x,指定要杀死的横行,杀死后变为空地\n";
+			cout<<"kill_line命令,参数x,指定要杀死的竖列,杀死后变为空地\n";
 			cout<<"kill_square命令,参数x1,y1,x2,y2,指定要杀死的二维区间,杀死后变为空地\n";
 			cout<<"change命令,参数x,y和字符c,指定要改变的方块\n";
-			cout<<"change_line命令,参数x和字符c,指定要改变的横行\n";
+			cout<<"change_line命令,参数x和字符c,指定要改变的竖列\n";
 			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,定要改变的二维区间\n";
 			cout<<"next命令,进入下一天\n";
 			cout<<"exit命令,退出程序\n";
@@ -210,7 +210,7 @@ inline void run_en()
 			cout<<"请输入参数:\n";
 			int h;
 			cin>>h;
-			for(int i=1;i<=x;i++)
+			for(int i=1;i<=y;i++)
 			{
 				en[i][h]='.';
 			}
@@ -381,7 +381,7 @@ inline void new_en(int x,int y)
 						}
 						if(en[i][j-1]=='s')
 						{
-							en[i-1][j]='.';
+							en[i][j-1]='.';
 						}
 						if(en[i+1][j]=='s')
 						{
@@ -416,7 +416,7 @@ inline void new_en(int x,int y)
 						}
 						if(en[i][j-1]=='#')
 						{
-							en[i-1][j]='.';
+							en[i][j-1]='.';
 						}
 						if(en[i+1][j]=='#')
 						{
@@ -451,7 +451,7 @@ inline void new_en(int x,int y)
 						}
 						if(en[i][j-1]=='.')
 						{
-							en[i-1][j]='#';
+							en[i][j-1]='#';
 						}
 						if(en[i+1][j]=='.')
 						{
@@ -481,10 +481,10 @@ inline void new_en(int x,int y)
 		{
 			cout<<"命令大全:\n";
 			cout<<"kill命令,参数x和y,指定要杀死的方块,杀死后变为空地\n";
-			cout<<"kill_line命令,参数x,指定要杀死的横行,杀死后变为空地\n";
+			cout<<"kill_line命令,参数x,指定要杀死的竖列,杀死后变为空地\n";
 			cout<<"kill_square命令,参数x1,y1,x2,y2,指定要杀死的二维区间,杀死后变为空地\n";
 			cout<<"change命令,参数x,y和字符c,指定要改变的方块\n";
-			cout<<"change_line命令,参数x和字符c,指定要改变的横行\n";
+			cout<<"change_line命令,参数x和字符c,指定要改变的竖列\n";
 			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,定要改变的二维区间\n";
 			cout<<"next命令,进入下一天\n";
 			cout<<"exit命令,退出程序\n";
@@ -523,7 +523,7 @@ inline void new_en(int x,int y)
 			cout<<"请输入参数:\n";
 			int h;
 			cin>>h;
-			for(int i=1;i<=x;i++)
+			for(int i=1;i<=y;i++)
 			{
 				en[i][h]='.';
 			}
@@ -574,7 +574,7 @@ inline void new_en(int x,int y)
 				cout<<"Bad Command!\n";
 				goto B;
 			}
-			for(register int i=1;i<=x;i++)
+			for(register int i=1;i<=y;i++)
 			{
 				en[i][h]=zzz;
 			}
