@@ -172,7 +172,7 @@ inline void run_en()
 			cout<<"kill_square命令,参数x1,y1,x2,y2,指定要杀死的二维区间,杀死后变为空地\n";
 			cout<<"change命令,参数x,y和字符c,指定要改变的方块\n";
 			cout<<"change_line命令,参数x和字符c,指定要改变的竖列\n";
-			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,定要改变的二维区间\n";
+			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,指定要改变的二维区间\n";
 			cout<<"next命令,进入下一天\n";
 			cout<<"exit命令,退出程序\n";
 			cout<<"help命令,获取命令大全和方块字符大全\n";
@@ -485,7 +485,7 @@ inline void new_en(int x,int y)
 			cout<<"kill_square命令,参数x1,y1,x2,y2,指定要杀死的二维区间,杀死后变为空地\n";
 			cout<<"change命令,参数x,y和字符c,指定要改变的方块\n";
 			cout<<"change_line命令,参数x和字符c,指定要改变的竖列\n";
-			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,定要改变的二维区间\n";
+			cout<<"change_square命令,参数x1,y1,x2,y2和字符c,指定要改变的二维区间\n";
 			cout<<"next命令,进入下一天\n";
 			cout<<"exit命令,退出程序\n";
 			cout<<"help命令,获取命令大全和方块字符大全\n";
