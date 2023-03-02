@@ -1,5 +1,6 @@
 //草原生态模拟器,By赵紫辰 
 #include <iostream>
+#include <cctype>
 #include <cstdio>
 #include <string>
 #include <windows.h>
@@ -164,6 +165,10 @@ inline void run_en()
 		A:cout<<"请输入指令:";
 		string s;
 		cin>>s;
+		for(int z=0;z<s.size();z++)
+		{
+			s[z]=tolower(s[z]);
+		}
 		if(s=="help")
 		{
 			cout<<"命令大全:\n";
@@ -281,7 +286,7 @@ inline void run_en()
 			en[g][l]=zzzz; 
 			system("cls");
 		}
-		else if(s=="Atom_Bomb")
+		else if(s=="atom_bomb")
 		{
 			for(int i=1;i<=x;i++)
 			{
@@ -477,6 +482,10 @@ inline void new_en(int x,int y)
 		A:cout<<"请输入指令:";
 		string s;
 		cin>>s;
+		for(int z=0;z<s.size();z++)
+		{
+			s[z]=tolower(s[z]);
+		}
 		if(s=="help")
 		{
 			cout<<"命令大全:\n";
@@ -594,7 +603,7 @@ inline void new_en(int x,int y)
 			en[g][l]=zzzz; 
 			system("cls");
 		}
-		else if(s=="Atom_Bomb")
+		else if(s=="atom_bomb")
 		{
 			for(int i=1;i<=x;i++)
 			{
@@ -652,11 +661,11 @@ int main()
 	color(1);
 	cout<<"小提示:开始模拟后可通过输入help命令获取命令大全与方块字符大全\n"; 
 	color(7);
-	cout<<"模拟器模式:\n1.创建新草原生态\n2.读档\n请输入:";
+	cout<<"模拟器模式:\n1.创建新草原生态\n2.读档\n请输入模拟器模式:";
 	cin>>n;
 	if(n==1)
 	{
-		cout<<"请输入新地图的长和宽(推荐为25*25,最大1000*1000):\n";
+		cout<<"请输入新地图的长和宽(推荐为25 25,最大1000 1000):\n";
 		cin>>x>>y;
 		if(x>1000||y>1000||x<1||y<1)
 		{
