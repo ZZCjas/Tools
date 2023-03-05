@@ -10,7 +10,9 @@
 #include <cstring>
 #include <ctime>
 using namespace std;
+#define endl '\n'
 string path,store;
+const int all_block_num=1000;
 void color(int x)
 {
 	if(x>=0&&x<=15)
@@ -367,8 +369,30 @@ inline void new_en(int x,int y)
 		}
 	}
 	system("cls");
-	system("title 生成地图中...");
-	Sleep(1000);
+	system("title 加载地图中...");
+	for(int i=0;i<all_block_num;i++)
+	{
+		if(i<all_block_num-1)
+		{
+			printf("\r加载中[%.2lf%%]:",i*100.0/(all_block_num-1));
+		}
+		else
+		{
+			printf("\r加载完成[%.2lf%%]:",i*100.0/(all_block_num-1));
+		}
+		int show_num=i*20/all_block_num;
+		color(2);
+		for(int j=1;j<=show_num;j++)
+		{
+			cout<<"█";
+		}
+		color(7);
+	}
+	color(2);
+	cout<<" √\n加载成功!";
+	Sleep(500);
+	color(7);
+	system("cls");
 	system("title 模拟中");
 	for(long long d=1;;d++)
 	{
@@ -653,6 +677,8 @@ inline void new_en(int x,int y)
 int x,y,n;
 int main()
 {
+	cin.tie(0);
+	cout.tie(0); 
 	system("title 草原生态模拟器");
 	color(2);
 	cout<<"草原生态模拟器\n";
@@ -682,9 +708,31 @@ int main()
 		{
 			error("无效存档文件路径!");
 		}
+		system("cls");
+		for(int i=0;i<all_block_num;i++)
+		{
+			if(i<all_block_num-1)
+			{
+				printf("\r读取中[%.2lf%%]:",i*100.0/(all_block_num-1));
+			}
+			else
+			{
+				printf("\r读取完成[%.2lf%%]:",i*100.0/(all_block_num-1));
+				Sleep(500);
+			}
+			int show_num=i*20/all_block_num;
+			color(2);
+			for(int j=1;j<=show_num;j++)
+			{
+				cout<<"█";
+			}
+			color(7);
+		}
 		color(2);
-		cout<<"读档中!正在加载...\n";
+		cout<<" √\n正在解析格式...";
+		Sleep(500);
 		color(7);
+		system("cls");
 		Sleep(1000);
 		run_en();
 	}
